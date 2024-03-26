@@ -33,3 +33,6 @@ Route::post('/kategori',[KategoriController::class,'store']);
 Route::get('/kategori/edit/{id}', [KategoriController::class, 'edit'])->name('EditKategori');
 Route::put('/kategori/update/{id}', [KategoriController::class, 'update'])->name('UpdateKategori');
 Route::get('/kategori/delete/{id}', [KategoriController::class, 'delete'])->name('DeleteKategori');
+
+Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+Route::get('/level/create', [LevelController::class, 'create'])->name('level.create');

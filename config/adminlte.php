@@ -377,6 +377,16 @@ return [
             'url' => 'kategori',
             'icon' => 'far fa-fw fa-file',
         ],
+        [
+            'text' => 'User',
+            'url' => 'user',
+            'icon' => 'far fa-fw fa-folder',
+        ],
+        [
+            'text' => 'Level',
+            'url' => 'level',
+            'icon' => 'far fa-fw fa-folder',
+        ],
         ['header' => 'labels'],
         [
             'text' => 'important',
