@@ -18,6 +18,7 @@ class UserRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'username' => 'required',
             'password' => 'required',
             'nama' => 'required',
             'level_id' => 'required',
