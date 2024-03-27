@@ -35,4 +35,7 @@ Route::put('/kategori/update/{id}', [KategoriController::class, 'update'])->name
 Route::get('/kategori/delete/{id}', [KategoriController::class, 'delete'])->name('DeleteKategori');
 
 Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
-Route::get('/level/create', [LevelController::class, 'create'])->name('level.create');
+Route::get('/level/create', [LevelController::class, 'create'])->name('levek.create');
+
+Route::post('/user', [UserController::class, 'store']);
+Route::post('/level', [LevelController::class, 'store']);

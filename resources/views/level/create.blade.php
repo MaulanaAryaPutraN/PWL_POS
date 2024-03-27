@@ -1,32 +1,43 @@
 @extends('layouts.app')
-
-{{-- Customize layout sections  --}}
-@section('subtitle', 'Level')
+{{-- Customize layout sections --}}
+@section('subtitle', 'Kategori')
 @section('content_header_title', 'Level')
-@section('content_header_subtitle', 'Tambah')
-
-{{-- Content body:main page content  --}}
+@section('content_header_subtitle', 'Create')
+{{-- Content body: main page content --}}
 @section('content')
-    <div class="card card-primary">
-        <div class="card-header">
-            <h3 class="card-title">Input Level</h3>
+    <div class="container">
+        <div class="card card-primary">
+            <div class="card-header">
+                <div class="card-title">Buat Level baru</div>
+            </div>
+
+            <form action="../level" method="post">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="level_kode">Kode Level</label>
+                        <input type="text" id="level_kode" name="level_kode"
+                               class="form-control @error('level_kode') is-invalid @enderror">
+
+                        @error('level_kode')
+                        <div class="alert alert-danger">{{$message}}</div>
+                        @enderror
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="level_nama">Nama Level</label>
+                        <input type="text" name="level_nama" id="level_nama" 
+                        class="form-control @error('level_nama') is-invalid @enderror">
+
+                        @error('level_nama')
+                        <div class="alert alert-danger">{{$message}}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                
+            </form>
         </div>
-        <!-- /.card-header -->
-        <!-- form start -->
-        <form>
-            <div class="card-body">
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Level Kode</label>
-                    <input type="Number" class="form-control" id="exampleInputPassword1" placeholder="Input Level Kode">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Level Nama</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Input level Nama">
-                </div>
-            </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
     </div>
 @endsection

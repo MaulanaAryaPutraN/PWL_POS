@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\DataTables\LevelDataTable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\DataTables\LevelDataTable;
+use App\Http\Requests\LevelRequest;
+use App\Models\KategoriModel;
 use Illuminate\View\View;
-
 class LevelController extends Controller
 {
     public function index(LevelDataTable $dataTable)
@@ -31,6 +31,18 @@ class LevelController extends Controller
     public function create(): view
     {
         return view('level.create');
+    }
+    /**
+     * validate Level form and store that in database
+     */
+    public function store(LevelRequest $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'level_kode' => 'bail|required',
+            'level_nama' => 'required'
+        ]);
+
+        return redirect('/level');
     }
 
 }

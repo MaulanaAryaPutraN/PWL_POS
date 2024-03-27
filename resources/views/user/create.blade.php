@@ -1,52 +1,64 @@
 @extends('layouts.app')
-
-{{-- Customize layout sections  --}}
-@section('subtitle', 'User')
-@section('content_header_title', 'User')
-@section('content_header_subtitle', 'Tambah ')
-
-{{-- Content body:main page content  --}}
+{{-- Customize layout sections --}}
+@section('subtitle', 'Kategori')
+@section('content_header_title', 'Level')
+@section('content_header_subtitle', 'Create')
+{{-- Content body: main page content --}}
 @section('content')
-    <div class="card card-info">
-        <div class="card-header">
-            <h3 class="card-title">Input User</h3>
+    <div class="container">
+        <div class="card card-primary">
+            <div class="card-header">
+                <div class="card-title">Buat User baru</div>
+            </div>
+
+            <form action="../user" method="post">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="level_kode">Username</label>
+                        <input type="text" id="username" name="username"
+                               class="form-control @error('level_kode') is-invalid @enderror">
+
+                        @error('username')
+                        <div class="alert alert-danger">{{$message}}</div>
+                        @enderror
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="level_nama">Password</label>
+                        <input type="text" name="level_nama" id="level_nama" 
+                        class="form-control @error('level_nama') is-invalid @enderror">
+
+                        @error('level_nama')
+                        <div class="alert alert-danger">{{$message}}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="level_nama">Nama</label>
+                    <input type="text" name="level_nama" id="level_nama" 
+                    class="form-control @error('level_nama') is-invalid @enderror">
+
+                    @error('level_nama')
+                    <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="level_nama">Level ID</label>
+                    <input type="text" name="level_nama" id="level_nama" 
+                    class="form-control @error('level_nama') is-invalid @enderror">
+
+                    @error('level_nama')
+                    <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
+                </div>
+            </div>
+
+            
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                
+            </form>
         </div>
-        <div class="card-body">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">@</span>
-                </div>
-                <input type="text" class="form-control" placeholder="Username">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-key"></i></span>
-                </div>
-                <input type="password" class="form-control" placeholder="Password">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-user"></i></span>
-                </div>
-                <input type="text" class="form-control" placeholder="Nama">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-address-card"></i></span>
-                </div>
-                <select class="form-control">
-                    <option value="1">level 1</option>
-                    <option value="2">level 2</option>
-                    <option value="3">level 3</option>
-                    <option value="4">level 4</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <!-- /input-group -->
-        </div>
-        <!-- /.card-body -->
     </div>
 @endsection

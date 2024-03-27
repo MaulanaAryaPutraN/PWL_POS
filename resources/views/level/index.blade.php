@@ -12,7 +12,7 @@
             <div class="card-header">Manage Level</div>
             <div class="card-body">
                 {{ $dataTable->table() }}
-                <a class="btn btn-success" href="{{route('level.create')}}">Tambah Level</a>
+                <a class="btn btn-success" href="{{url('level/create')}}">Tambah Level</a>
             </div>
         </div>
     </div>
