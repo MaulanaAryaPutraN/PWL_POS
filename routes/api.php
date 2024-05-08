@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\LogoutController;
 use App\Http\Controllers\Api\LevelController;
+use App\Http\Controllers\Api\TransaksiController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -56,3 +57,10 @@ Route::post('barang', [BarangController::class, 'store']);
 Route::get('barang/{barang}', [BarangController::class, 'show']);
 Route::put('barang/{barang}', [BarangController::class, 'update']);
 Route::delete('barang/{barang}', [BarangController::class, 'destroy']);
+
+// TRANSAKSI PENJUALAN
+Route::get('transaksi', [TransaksiController::class, 'index']);
+Route::post('transaksi', [TransaksiController::class, 'store']);
+Route::get('transaksi/{transaksi}', [TransaksiController::class, 'show']);
+Route::put('transaksi/{transaksi}', [TransaksiController::class, 'update']);
+Route::delete('transaksi/{transaksi}', [TransaksiController::class, 'destroy']);
